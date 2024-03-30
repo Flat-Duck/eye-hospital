@@ -24,16 +24,18 @@
                 <h5 class="modal-title">{{ $modalTitle }}</h5>
                 <button
                     type="button"
-                    class="close"
+                    class="btn-close"
                     data-dismiss="modal"
                     aria-label="Close"
+                    data-bs-dismiss="modal"
                 >
-                    <span aria-hidden="true">&times;</span>
+                    {{-- <span aria-hidden="true">&times;</span> --}}
                 </button>
             </div>
 
             <div class="modal-body">
                 <div>
+                <div class="row">
                     <x-inputs.group class="col-sm-12 col-lg-11">
                         <x-inputs.select
                             name="diagnose.eye"
@@ -165,7 +167,7 @@
                             name="diagnoseOct"
                             id="diagnoseOct{{ $uploadIteration }}"
                             wire:model="diagnoseOct"
-                            class="form-control-file"
+                            class="form-control"
                         />
 
                         @if($editing && $diagnose->OCT)
@@ -193,7 +195,7 @@
                             name="diagnoseUs"
                             id="diagnoseUs{{ $uploadIteration }}"
                             wire:model="diagnoseUs"
-                            class="form-control-file"
+                            class="form-control"
                         />
 
                         @if($editing && $diagnose->US)
@@ -221,7 +223,7 @@
                             name="diagnosePantacam"
                             id="diagnosePantacam{{ $uploadIteration }}"
                             wire:model="diagnosePantacam"
-                            class="form-control-file"
+                            class="form-control"
                         />
 
                         @if($editing && $diagnose->pantacam)
@@ -237,6 +239,7 @@
                         @include('components.inputs.partials.error') @enderror
                     </x-inputs.group>
                 </div>
+                </div>
             </div>
 
             @if($editing) @endif
@@ -244,15 +247,15 @@
             <div class="modal-footer">
                 <button
                     type="button"
-                    class="btn btn-light float-left"
+                    class="btn me-auto"
                     wire:click="$toggle('showingModal')"
                 >
-                    <i class="icon ion-md-close"></i>
+                    <i class="ti ti-close"></i>
                     @lang('crud.common.cancel')
                 </button>
 
                 <button type="button" class="btn btn-primary" wire:click="save">
-                    <i class="icon ion-md-save"></i>
+                    <i class="ti ti-save"></i>
                     @lang('crud.common.save')
                 </button>
             </div>
@@ -393,6 +396,24 @@
                 </tr>
                 @endforeach
             </tbody>
+        </table>
+    </div>
+    {{-- @if( $invoiceItems->hasPages() ) --}}
+    {{-- <div class="card-footer pb-0">{{ $invoiceItems->links() }}</div> --}}
+    <td colspan="16">{{ $diagnoses->render() }}</td>
+    {{-- @endif --}}
+    <script>
+        // document.addEventListener('livewire:load', function () {
+        //     // $(document).ready(function() {
+        //         $('#item_id').select2({
+        //             dropdownParent: $("#invoice-items-modal")
+        //         });
+        //     // });
+        
+        // })
+    </script>
+</div>
+{{-- 
             <tfoot>
                 <tr>
                     <td colspan="16">{{ $diagnoses->render() }}</td>
@@ -400,4 +421,4 @@
             </tfoot>
         </table>
     </div>
-</div>
+</div> --}}

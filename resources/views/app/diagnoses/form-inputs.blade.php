@@ -130,7 +130,7 @@
         ></x-inputs.partials.label
         ><br />
 
-        <input type="file" name="OCT" id="OCT" class="form-control-file" />
+        <input type="file" name="OCT" id="OCT" class="form-control" />
 
         @if($editing && $diagnose->OCT)
         <div class="mt-2">
@@ -146,7 +146,7 @@
         <x-inputs.partials.label name="US" label="Us"></x-inputs.partials.label
         ><br />
 
-        <input type="file" name="US" id="US" class="form-control-file" />
+        <input type="file" name="US" id="US" class="form-control" />
 
         @if($editing && $diagnose->US)
         <div class="mt-2">
@@ -169,7 +169,7 @@
             type="file"
             name="pantacam"
             id="pantacam"
-            class="form-control-file"
+            class="form-control"
         />
 
         @if($editing && $diagnose->pantacam)
