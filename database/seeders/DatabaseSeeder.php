@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Adding an admin user
+        // Adding an admin user
         $user = \App\Models\User::factory()
             ->count(1)
             ->create([
