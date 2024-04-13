@@ -1,4 +1,4 @@
-{{--
+{{-- 
     This modal was copied from Jetstrap components,
     an awesome package for adapting Jetstrem for Bootstrap:
 
@@ -30,7 +30,7 @@ switch ($maxWidth ?? '') {
 @endphp
 
 <!-- Modal -->
-<div
+<div 
     x-data="{
         show: @entangle($attributes->wire('model')).defer,
     }"
@@ -47,16 +47,15 @@ switch ($maxWidth ?? '') {
             show = false
         })
     }"
-    wire:ignore.self
-    class="modal modal-blur fade"
-    tabindex="-1"
-    id="{{ $id }}"
-    aria-labelledby="{{ $id }}"
+    wire:ignore.self 
+    class="modal fade" 
+    tabindex="-1" 
+    id="{{ $id }}" 
+    aria-labelledby="{{ $id }}" 
     aria-hidden="true"
-    role="dialog"
     x-ref="{{ $id }}"
 >
-    <div class="modal-dialog {{ $maxWidth }} modal-dialog-centered" role="document">
+    <div class="modal-dialog{{ $maxWidth }}">
         {{ $slot }}
     </div>
 </div>

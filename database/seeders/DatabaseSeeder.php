@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'admin@admin.com',
                 'password' => \Hash::make('admin'),
             ]);
-       $this->call(PermissionsSeeder::class);
+        $this->call(PermissionsSeeder::class);
 
         $this->call(DiagnoseSeeder::class);
         $this->call(HospitalSeeder::class);

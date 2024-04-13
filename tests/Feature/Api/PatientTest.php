@@ -54,6 +54,12 @@ class PatientTest extends TestCase
 
         $response = $this->postJson(route('api.patients.store'), $data);
 
+        unset($data['CO']);
+        unset($data['PMH']);
+        unset($data['PSH']);
+        unset($data['DM']);
+        unset($data['BP']);
+
         $this->assertDatabaseHas('patients', $data);
 
         $response->assertStatus(201)->assertJsonFragment($data);
@@ -89,6 +95,12 @@ class PatientTest extends TestCase
             route('api.patients.update', $patient),
             $data
         );
+
+        unset($data['CO']);
+        unset($data['PMH']);
+        unset($data['PSH']);
+        unset($data['DM']);
+        unset($data['BP']);
 
         $data['id'] = $patient->id;
 

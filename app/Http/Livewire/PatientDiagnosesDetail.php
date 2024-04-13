@@ -32,7 +32,7 @@ class PatientDiagnosesDetail extends Component
     public $modalTitle = 'New Diagnose';
 
     protected $rules = [
-        'diagnose.eye' => ['required', 'in:Left,Right'],
+        'diagnose.eye' => ['required', 'in:left,right'],
         'diagnose.BCVA' => ['nullable', 'max:255', 'string'],
         'diagnose.IOP' => ['nullable', 'max:255', 'string'],
         'diagnose.LID' => ['nullable', 'max:255', 'string'],
@@ -44,9 +44,9 @@ class PatientDiagnosesDetail extends Component
         'diagnose.fundus' => ['nullable', 'max:255', 'string'],
         'diagnose.remarks' => ['nullable', 'max:255', 'string'],
         'diagnose.diagnosis' => ['nullable', 'max:255', 'string'],
-        'diagnoseOct' => ['file', 'max:10240', 'nullable'],
-        'diagnoseUs' => ['file', 'max:10240', 'nullable'],
-        'diagnosePantacam' => ['file', 'max:10240', 'nullable'],
+        'diagnoseOct' => ['file', 'max:1024', 'nullable'],
+        'diagnoseUs' => ['file', 'max:1024', 'nullable'],
+        'diagnosePantacam' => ['file', 'max:1024', 'nullable'],
     ];
 
     public function mount(Patient $patient): void

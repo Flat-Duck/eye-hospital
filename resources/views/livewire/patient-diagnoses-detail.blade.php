@@ -24,19 +24,17 @@
                 <h5 class="modal-title">{{ $modalTitle }}</h5>
                 <button
                     type="button"
-                    class="btn-close"
+                    class="close"
                     data-dismiss="modal"
                     aria-label="Close"
-                    data-bs-dismiss="modal"
                 >
-                    {{-- <span aria-hidden="true">&times;</span> --}}
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
             <div class="modal-body">
                 <div>
-                <div class="row">
-                    <x-inputs.group class="col-sm-12 col-lg-11">
+                    <x-inputs.group class="col-sm-12">
                         <x-inputs.select
                             name="diagnose.eye"
                             label="Eye"
@@ -50,97 +48,97 @@
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
                             name="diagnose.BCVA"
-                            label="Bcva"
+                            label="BCVA"
                             wire:model="diagnose.BCVA"
                             maxlength="255"
-                            placeholder="Bcva"
+                            placeholder="BCVA"
                         ></x-inputs.text>
                     </x-inputs.group>
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
                             name="diagnose.IOP"
-                            label="Iop"
+                            label="I.O.P"
                             wire:model="diagnose.IOP"
                             maxlength="255"
-                            placeholder="Iop"
+                            placeholder="I.O.P"
                         ></x-inputs.text>
                     </x-inputs.group>
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
                             name="diagnose.LID"
-                            label="Lid"
+                            label="LID"
                             wire:model="diagnose.LID"
                             maxlength="255"
-                            placeholder="Lid"
+                            placeholder="LID"
                         ></x-inputs.text>
                     </x-inputs.group>
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
                             name="diagnose.conjunctiva"
-                            label="Conjunctiva"
+                            label="CONJUNCTIVA"
                             wire:model="diagnose.conjunctiva"
                             maxlength="255"
-                            placeholder="Conjunctiva"
+                            placeholder="CONJUNCTIVA"
                         ></x-inputs.text>
                     </x-inputs.group>
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
                             name="diagnose.cornea"
-                            label="Cornea"
+                            label="CORNEA"
                             wire:model="diagnose.cornea"
                             maxlength="255"
-                            placeholder="Cornea"
+                            placeholder="CORNEA"
                         ></x-inputs.text>
                     </x-inputs.group>
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
                             name="diagnose.AC"
-                            label="Ac"
+                            label="A/C"
                             wire:model="diagnose.AC"
                             maxlength="255"
-                            placeholder="Ac"
+                            placeholder="A/C"
                         ></x-inputs.text>
                     </x-inputs.group>
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
                             name="diagnose.IrisPupil"
-                            label="Iris Pupil"
+                            label="IRIS & PUPIL"
                             wire:model="diagnose.IrisPupil"
                             maxlength="255"
-                            placeholder="Iris Pupil"
+                            placeholder="IRIS & PUPIL"
                         ></x-inputs.text>
                     </x-inputs.group>
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
                             name="diagnose.lens"
-                            label="Lens"
+                            label="LENS"
                             wire:model="diagnose.lens"
                             maxlength="255"
-                            placeholder="Lens"
+                            placeholder="LENS"
                         ></x-inputs.text>
                     </x-inputs.group>
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
                             name="diagnose.fundus"
-                            label="Fundus"
+                            label="FUNDUS"
                             wire:model="diagnose.fundus"
                             maxlength="255"
-                            placeholder="Fundus"
+                            placeholder="FUNDUS"
                         ></x-inputs.text>
                     </x-inputs.group>
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.textarea
                             name="diagnose.remarks"
-                            label="Remarks"
+                            label="REMARKS"
                             wire:model="diagnose.remarks"
                             maxlength="255"
                         ></x-inputs.textarea>
@@ -149,7 +147,7 @@
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.textarea
                             name="diagnose.diagnosis"
-                            label="Diagnosis"
+                            label="DIAGNOSIS"
                             wire:model="diagnose.diagnosis"
                             maxlength="255"
                         ></x-inputs.textarea>
@@ -158,7 +156,7 @@
                     <x-inputs.group class="col-sm-12 col-lg-4">
                         <x-inputs.partials.label
                             name="diagnoseOct"
-                            label="Oct"
+                            label="OCT"
                         ></x-inputs.partials.label
                         ><br />
 
@@ -167,7 +165,7 @@
                             name="diagnoseOct"
                             id="diagnoseOct{{ $uploadIteration }}"
                             wire:model="diagnoseOct"
-                            class="form-control"
+                            class="form-control-file"
                         />
 
                         @if($editing && $diagnose->OCT)
@@ -186,7 +184,7 @@
                     <x-inputs.group class="col-sm-12 col-lg-4">
                         <x-inputs.partials.label
                             name="diagnoseUs"
-                            label="Us"
+                            label="U/S"
                         ></x-inputs.partials.label
                         ><br />
 
@@ -195,7 +193,7 @@
                             name="diagnoseUs"
                             id="diagnoseUs{{ $uploadIteration }}"
                             wire:model="diagnoseUs"
-                            class="form-control"
+                            class="form-control-file"
                         />
 
                         @if($editing && $diagnose->US)
@@ -214,7 +212,7 @@
                     <x-inputs.group class="col-sm-12 col-lg-4">
                         <x-inputs.partials.label
                             name="diagnosePantacam"
-                            label="Pantacam"
+                            label="PANTACAM"
                         ></x-inputs.partials.label
                         ><br />
 
@@ -223,7 +221,7 @@
                             name="diagnosePantacam"
                             id="diagnosePantacam{{ $uploadIteration }}"
                             wire:model="diagnosePantacam"
-                            class="form-control"
+                            class="form-control-file"
                         />
 
                         @if($editing && $diagnose->pantacam)
@@ -239,7 +237,6 @@
                         @include('components.inputs.partials.error') @enderror
                     </x-inputs.group>
                 </div>
-                </div>
             </div>
 
             @if($editing) @endif
@@ -247,15 +244,15 @@
             <div class="modal-footer">
                 <button
                     type="button"
-                    class="btn me-auto"
+                    class="btn btn-light float-left"
                     wire:click="$toggle('showingModal')"
                 >
-                    <i class="ti ti-close"></i>
+                    <i class="icon ion-md-close"></i>
                     @lang('crud.common.cancel')
                 </button>
 
                 <button type="button" class="btn btn-primary" wire:click="save">
-                    <i class="ti ti-save"></i>
+                    <i class="icon ion-md-save"></i>
                     @lang('crud.common.save')
                 </button>
             </div>
@@ -396,24 +393,6 @@
                 </tr>
                 @endforeach
             </tbody>
-        </table>
-    </div>
-    {{-- @if( $invoiceItems->hasPages() ) --}}
-    {{-- <div class="card-footer pb-0">{{ $invoiceItems->links() }}</div> --}}
-    <td colspan="16">{{ $diagnoses->render() }}</td>
-    {{-- @endif --}}
-    <script>
-        // document.addEventListener('livewire:load', function () {
-        //     // $(document).ready(function() {
-        //         $('#item_id').select2({
-        //             dropdownParent: $("#invoice-items-modal")
-        //         });
-        //     // });
-        
-        // })
-    </script>
-</div>
-{{-- 
             <tfoot>
                 <tr>
                     <td colspan="16">{{ $diagnoses->render() }}</td>
@@ -421,4 +400,4 @@
             </tfoot>
         </table>
     </div>
-</div> --}}
+</div>

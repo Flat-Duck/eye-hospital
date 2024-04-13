@@ -80,11 +80,6 @@
                     <th class="text-left">
                         @lang('crud.patients.inputs.hospital_id')
                     </th>
-                    <th class="text-left">@lang('crud.patients.inputs.CO')</th>
-                    <th class="text-left">@lang('crud.patients.inputs.PMH')</th>
-                    <th class="text-left">@lang('crud.patients.inputs.PSH')</th>
-                    <th class="text-left">@lang('crud.patients.inputs.DM')</th>
-                    <th class="text-left">@lang('crud.patients.inputs.BP')</th>
                     <th class="text-center">@lang('crud.common.actions')</th>
                 </tr>
             </thead>
@@ -100,11 +95,6 @@
                     <td>{{ $patient->city ?? '-' }}</td>
                     <td>{{ $patient->category ?? '-' }}</td>
                     <td>{{ optional($patient->hospital)->name ?? '-' }}</td>
-                    <td>{{ $patient->CO ?? '-' }}</td>
-                    <td>{{ $patient->PMH ?? '-' }}</td>
-                    <td>{{ $patient->PSH ?? '-' }}</td>
-                    <td>{{ $patient->DM ?? '-' }}</td>
-                    <td>{{ $patient->BP ?? '-' }}</td>
                     <td class="text-center" style="width: 134px;">
                         <div
                             role="group"
@@ -146,7 +136,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="15">@lang('crud.common.no_items_found')</td>
+                    <td colspan="10">@lang('crud.common.no_items_found')</td>
                 </tr>
                 @endforelse
             </tbody>

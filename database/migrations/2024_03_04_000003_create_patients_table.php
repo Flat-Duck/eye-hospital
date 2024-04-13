@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('name');
             $table->date('birth_date');
             $table->bigInteger('n_id');
-            $table->enum('gender', ['male', 'female', 'other']);
+            $table->enum('gender', ['male', 'female']);
             $table->string('phone');
             $table->string('escort_phone');
             $table->string('city');

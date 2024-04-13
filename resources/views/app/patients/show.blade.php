@@ -112,61 +112,6 @@
                                 disabled=""
                             />
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label"
-                                >@lang('crud.patients.inputs.CO')</label
-                            >
-                            <input
-                                type="text"
-                                class="form-control"
-                                value="{{ $patient->CO ?? '-' }}"
-                                disabled=""
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label"
-                                >@lang('crud.patients.inputs.PMH')</label
-                            >
-                            <input
-                                type="text"
-                                class="form-control"
-                                value="{{ $patient->PMH ?? '-' }}"
-                                disabled=""
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label"
-                                >@lang('crud.patients.inputs.PSH')</label
-                            >
-                            <input
-                                type="text"
-                                class="form-control"
-                                value="{{ $patient->PSH ?? '-' }}"
-                                disabled=""
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label"
-                                >@lang('crud.patients.inputs.DM')</label
-                            >
-                            <input
-                                type="text"
-                                class="form-control"
-                                value="{{ $patient->DM ?? '-' }}"
-                                disabled=""
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label"
-                                >@lang('crud.patients.inputs.BP')</label
-                            >
-                            <input
-                                type="text"
-                                class="form-control"
-                                value="{{ $patient->BP ?? '-' }}"
-                                disabled=""
-                            />
-                        </div>
                     </div>
                 </div>
             </div>
@@ -189,4 +134,12 @@
     </div>
 </div>
 
-@endsection
+@can('view-any', App\Models\Diagnose::class)
+<div class="card mt-4">
+    <div class="card-body">
+        <h4 class="card-title w-100 mb-2">Diagnoses</h4>
+
+        <livewire:patient-diagnoses-detail :patient="$patient" />
+    </div>
+</div>
+@endcan @endsection

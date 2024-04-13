@@ -64,6 +64,12 @@ class HospitalPatientsTest extends TestCase
             $data
         );
 
+        unset($data['CO']);
+        unset($data['PMH']);
+        unset($data['PSH']);
+        unset($data['DM']);
+        unset($data['BP']);
+
         $this->assertDatabaseHas('patients', $data);
 
         $response->assertStatus(201)->assertJsonFragment($data);

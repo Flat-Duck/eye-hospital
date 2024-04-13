@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -44,15 +45,15 @@
         <!-- Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
         {{-- <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"> --}}
+        @yield('meta_tags')        
+        <title>hospital</title>        
         @yield('styles')
-        <!-- Small Ionicons Fixes for tablerCore -->
 
-            
-
+        
         @livewireStyles
     </head>
     
-    <body>
+    <body dir="rtl">
         <div id="app" class="page">
             <div class="sticky-top">
                 @include('layouts.nav')

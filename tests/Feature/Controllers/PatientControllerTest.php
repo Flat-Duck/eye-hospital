@@ -66,6 +66,12 @@ class PatientControllerTest extends TestCase
 
         $response = $this->post(route('patients.store'), $data);
 
+        unset($data['CO']);
+        unset($data['PMH']);
+        unset($data['PSH']);
+        unset($data['DM']);
+        unset($data['BP']);
+
         $this->assertDatabaseHas('patients', $data);
 
         $patient = Patient::latest('id')->first();
@@ -130,6 +136,12 @@ class PatientControllerTest extends TestCase
         ];
 
         $response = $this->put(route('patients.update', $patient), $data);
+
+        unset($data['CO']);
+        unset($data['PMH']);
+        unset($data['PSH']);
+        unset($data['DM']);
+        unset($data['BP']);
 
         $data['id'] = $patient->id;
 
