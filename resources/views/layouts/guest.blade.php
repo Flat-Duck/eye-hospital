@@ -12,7 +12,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
-    <link href="https://preview.tabler.io/dist/css/tabler.min.css?1695847769" rel="stylesheet"/>
+    <link href="https://preview.tabler.io/dist/css/tabler.rtl.min.css?1695847769" rel="stylesheet"/>
     <link href="https://preview.tabler.io/dist/css/tabler-flags.min.css?1692870487" rel="stylesheet"/>
     <link href="https://preview.tabler.io/dist/css/tabler-payments.min.css?1692870487" rel="stylesheet"/>
     <link href="https://preview.tabler.io/dist/css/tabler-vendors.min.css?1692870487" rel="stylesheet"/>
@@ -52,7 +52,7 @@
     
     @livewireStyles
 </head>
-  <body>
+  <body dir="rtl">
   <body class=" d-flex flex-column">
     <div class="page page-center">
       <div class="container container-tight py-4">
