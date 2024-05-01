@@ -17,7 +17,13 @@ return new class extends Migration {
                 ->on('hospitals')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
-        });
+            $table
+                ->foreign('city_id')
+                ->references('id')
+                ->on('cities')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
+            });
     }
 
     /**
@@ -27,6 +33,7 @@ return new class extends Migration {
     {
         Schema::table('patients', function (Blueprint $table) {
             $table->dropForeign(['hospital_id']);
+            $table->dropForeign(['city_id']);
         });
     }
 };

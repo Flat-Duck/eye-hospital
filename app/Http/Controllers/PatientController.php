@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\AppointmentReminder;
+use App\Models\City;
 use App\Models\Patient;
 use App\Models\Hospital;
+use App\Models\Template;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -37,8 +40,9 @@ class PatientController extends Controller
         $this->authorize('create', Patient::class);
 
         $hospitals = Hospital::pluck('name', 'id');
+        $cities = City::pluck('name', 'id');
 
-        return view('app.patients.create', compact('hospitals'));
+        return view('app.patients.create', compact('hospitals', 'cities'));
     }
 
     /**
@@ -75,23 +79,39 @@ class PatientController extends Controller
         $this->authorize('update', $patient);
 
         $hospitals = Hospital::pluck('name', 'id');
+        $cities = City::pluck('name', 'id');
 
-        return view('app.patients.edit', compact('patient', 'hospitals'));
+        return view('app.patients.edit', compact('patient', 'hospitals', 'cities'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(
-        PatientUpdateRequest $request,
-        Patient $patient
-    ): RedirectResponse {
+    public function update( PatientUpdateRequest $request, Patient $patient ): RedirectResponse {
         $this->authorize('update', $patient);
 
         $validated = $request->validated();
 
         $patient->update($validated);
 
+        $this->operation($patient);
+        return redirect()
+            ->route('patients.edit', $patient)
+            ->withSuccess(__('crud.common.saved'));
+    }
+
+        /**
+     * Update the specified resource in storage.
+     */
+    public function operation(Patient $patient){
+       // $this->authorize('update', $patient);
+        
+       
+        $templates = Template::all();
+
+        foreach ($templates as $k => $template) {
+            dispatch(new AppointmentReminder($patient, $template))->delay(now());//->addDays($template->after));
+        }
         return redirect()
             ->route('patients.edit', $patient)
             ->withSuccess(__('crud.common.saved'));

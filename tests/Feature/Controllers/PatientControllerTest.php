@@ -122,7 +122,7 @@ class PatientControllerTest extends TestCase
             'name' => $this->faker->name(),
             'birth_date' => $this->faker->date(),
             'n_id' => $this->faker->randomNumber(),
-            'gender' => \Arr::random(['male', 'female', 'other']),
+            'gender' => \Arr::random(['male', 'female']),
             'phone' => $this->faker->phoneNumber(),
             'escort_phone' => $this->faker->text(255),
             'city' => $this->faker->city(),

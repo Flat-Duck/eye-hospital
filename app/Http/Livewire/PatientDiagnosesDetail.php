@@ -32,7 +32,7 @@ class PatientDiagnosesDetail extends Component
     public $modalTitle = 'New Diagnose';
 
     protected $rules = [
-        'diagnose.eye' => ['required', 'in:left,right'],
+        'diagnose.eye' => ['required', 'in:Left,Right'],
         'diagnose.BCVA' => ['nullable', 'max:255', 'string'],
         'diagnose.IOP' => ['nullable', 'max:255', 'string'],
         'diagnose.LID' => ['nullable', 'max:255', 'string'],

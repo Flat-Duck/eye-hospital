@@ -18,7 +18,7 @@ class Patient extends Model
         'gender',
         'phone',
         'escort_phone',
-        'city',
+        'city_id',
         'category',
         'hospital_id',
         'CO',
@@ -43,4 +43,26 @@ class Patient extends Model
     {
         return $this->hasMany(Diagnose::class);
     }
+
+    public static function men()
+    {
+        return Patient::where('gender', '=', 'male')->get();
+    }
+    public static function women()
+    {
+        return Patient::where('gender', '=', 'female')->get();
+    }
+
+    public static function children()
+    {
+        return Patient::where('birth_date', '>', now()->subYears(18))->get();
+    }
+
+    public static function complete()
+    {
+        return Patient::has('diagnoses');
+    }
+
+    
+
 }

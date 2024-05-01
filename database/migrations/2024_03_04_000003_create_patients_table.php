@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->enum('gender', ['male', 'female']);
             $table->string('phone');
             $table->string('escort_phone');
-            $table->string('city');
+            $table->unsignedBigInteger('city_id');
             $table->string('category');
             $table->unsignedBigInteger('hospital_id');
             $table->string('CO')->nullable();

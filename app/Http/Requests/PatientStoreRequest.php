@@ -26,7 +26,7 @@ class PatientStoreRequest extends FormRequest
             'gender' => ['required', 'in:male,female'],
             'phone' => ['required', 'max:255', 'string'],
             'escort_phone' => ['required', 'max:255', 'string'],
-            'city' => ['required', 'max:255', 'string'],
+            'city_id' => ['required', 'exists:cities,id'],
             'category' => ['required', 'max:255', 'string'],
             'hospital_id' => ['required', 'exists:hospitals,id'],
         ];

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -38,6 +40,8 @@ Route::prefix('/')
         Route::resource('hospitals', HospitalController::class);
         Route::resource('patients', PatientController::class);
         Route::resource('diagnoses', DiagnoseController::class);
+        Route::resource('templates', TemplateController::class);
+        Route::resource('cities', CityController::class);
         Route::get('profile', [
             \App\Http\Controllers\ProfileController::class,
             'show',

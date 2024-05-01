@@ -4,10 +4,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="name"
-            label="Name"
+            label="الاسم"
             :value="old('name', ($editing ? $user->name : ''))"
             maxlength="255"
-            placeholder="Name"
+            placeholder="الاسم"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -15,10 +15,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="phone"
-            label="Phone"
+            label="رقم الهاتف"
             :value="old('phone', ($editing ? $user->phone : ''))"
             maxlength="255"
-            placeholder="Phone"
+            placeholder="رقم الهاتف"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -26,10 +26,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.email
             name="email"
-            label="Email"
+            label="البريد الإلكتروني"
             :value="old('email', ($editing ? $user->email : ''))"
             maxlength="255"
-            placeholder="Email"
+            placeholder="البريد الإلكتروني"
             required
         ></x-inputs.email>
     </x-inputs.group>
@@ -37,17 +37,17 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.password
             name="password"
-            label="Password"
+            label="كلمة المرور"
             maxlength="255"
-            placeholder="Password"
+            placeholder="كلمة المرور"
             :required="!$editing"
         ></x-inputs.password>
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="hospital_id" label="Hospital" required>
+        <x-inputs.select name="hospital_id" label="المستشفى" required>
             @php $selected = old('hospital_id', ($editing ? $user->hospital_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Hospital</option>
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>الرجاء اختيار المستشفى</option>
             @foreach($hospitals as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
@@ -57,13 +57,13 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.checkbox
             name="active"
-            label="Active"
+            label="الحالة"
             :checked="old('active', ($editing ? $user->active : 0))"
         ></x-inputs.checkbox>
     </x-inputs.group>
 
     <div class="form-group col-sm-12 mt-4">
-        <h4>Assign @lang('crud.roles.name')</h4>
+        <h4>تعيين الصلاحيات</h4>
 
         @foreach ($roles as $role)
         <div>

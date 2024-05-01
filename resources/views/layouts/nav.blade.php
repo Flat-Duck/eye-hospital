@@ -5,18 +5,18 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
             <a href="{{ url('/') }}">
-                <img src="./static/logo.svg" width="110" height="32" alt="hospital" class="navbar-brand-image">
+                <img src="./static/logo.svg" width="110" height="32" alt="NTCP" class="navbar-brand-image">
             </a>
         </h1>
         <div class="navbar-nav flex-row order-md-last">
-            <div class="nav-item d-none d-md-flex me-3">
+            {{-- <div class="nav-item d-none d-md-flex me-3">
                 <div class="btn-list">
                 <a href="https://github.com/sponsors/codecalm" class="btn" target="_blank" rel="noreferrer">
                     <i class="ti ti-heart text-pink"></i>
                     Sponsor
                 </a>
             </div>
-        </div>
+        </div> --}}
         <div class="d-none d-md-flex">
             <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
                 <i class="ti ti-moon"></i>
@@ -24,7 +24,7 @@
             <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
                 <i class="ti ti-sun"></i>
             </a>
-            <div class="nav-item dropdown d-none d-md-flex me-3">
+            {{-- <div class="nav-item dropdown d-none d-md-flex me-3">
                 <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="Show notifications">
                     <i class="ti ti-bell"></i>
                     <span class="badge bg-red"></span>
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
                     <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>

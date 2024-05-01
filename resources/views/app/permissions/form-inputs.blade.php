@@ -4,7 +4,7 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="name"
-            label="Name"
+            label="الإسم"
             :value="old('name', ($editing ? $permission->name : ''))"
         ></x-inputs.text>
     </x-inputs.group>

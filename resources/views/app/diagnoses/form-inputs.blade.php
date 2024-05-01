@@ -22,7 +22,7 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="BCVA"
-            label="Bcva"
+            label="{{trans('crud.diagnoses.inputs.Bcva')}}"
             :value="old('BCVA', ($editing ? $diagnose->BCVA : ''))"
             maxlength="255"
             placeholder="Bcva"
@@ -135,7 +135,7 @@
         @if($editing && $diagnose->OCT)
         <div class="mt-2">
             <a href="{{ \Storage::url($diagnose->OCT) }}" target="_blank"
-                ><i class="icon ion-md-download"></i>&nbsp;Download</a
+                ><i class="icon ion-md-download"></i>&nbsp;تحميل</a
             >
         </div>
         @endif @error('OCT') @include('components.inputs.partials.error')
@@ -151,7 +151,7 @@
         @if($editing && $diagnose->US)
         <div class="mt-2">
             <a href="{{ \Storage::url($diagnose->US) }}" target="_blank"
-                ><i class="icon ion-md-download"></i>&nbsp;Download</a
+                ><i class="icon ion-md-download"></i>&nbsp;تحميل</a
             >
         </div>
         @endif @error('US') @include('components.inputs.partials.error')
@@ -175,7 +175,7 @@
         @if($editing && $diagnose->pantacam)
         <div class="mt-2">
             <a href="{{ \Storage::url($diagnose->pantacam) }}" target="_blank"
-                ><i class="icon ion-md-download"></i>&nbsp;Download</a
+                ><i class="icon ion-md-download"></i>&nbsp;تحميل</a
             >
         </div>
         @endif @error('pantacam') @include('components.inputs.partials.error')

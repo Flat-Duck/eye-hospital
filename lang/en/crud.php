@@ -124,6 +124,33 @@ return [
         ],
     ],
 
+    'cities' => [
+        'name' => 'المدن',
+        'index_title' => 'قائمة المدن',
+        'new_title' => 'مدينة جديدة',
+        'create_title' => 'انشاء مدينة',
+        'edit_title' => 'تعديل مدينة',
+        'show_title' => 'عرض مدينة',
+        'inputs' => [
+            'name' => 'الاسم',
+        ],
+    ],
+
+    'templates' => [
+        'name' => 'القوالب',
+        'index_title' => 'قائمة القوالب',
+        'new_title' => 'قالب جديد',
+        'create_title' => 'إنشاء قالب',
+        'edit_title' => 'تعديل قالب',
+        'show_title' => 'عرض قالب',
+        'inputs' => [
+            'title' => 'العنوان',
+            'text' => 'النص',
+            'after' => 'بعد عدد ايام',
+        ],
+    ],
+
+
     'roles' => [
         'name' => 'الادوار',
         'index_title' => 'الادوار قائمة',
