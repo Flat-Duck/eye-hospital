@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
             ]);
         $this->call(PermissionsSeeder::class);
 
-        $this->call(DiagnoseSeeder::class);
-        $this->call(HospitalSeeder::class);
-        $this->call(PatientSeeder::class);
-        $this->call(UserSeeder::class);
+        // $this->call(DiagnoseSeeder::class);
+        // $this->call(HospitalSeeder::class);
+        // $this->call(PatientSeeder::class);
+        // $this->call(UserSeeder::class);
     }
 }
