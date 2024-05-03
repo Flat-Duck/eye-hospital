@@ -62,9 +62,9 @@
                     <th class="text-left">
                         @lang('crud.patients.inputs.n_id')
                     </th>
-                    <th class="text-left">
+                    {{-- <th class="text-left">
                         @lang('crud.patients.inputs.gender')
-                    </th>
+                    </th> --}}
                     <th class="text-left">
                         @lang('crud.patients.inputs.phone')
                     </th>
@@ -80,6 +80,12 @@
                     <th class="text-left">
                         @lang('crud.patients.inputs.hospital_id')
                     </th>
+                    <th class="text-left">
+                        ----
+                    </th>
+                    <th class="text-left">
+                        الحالة
+                    </th>
                     <th class="text-center">@lang('crud.common.actions')</th>
                 </tr>
             </thead>
@@ -89,42 +95,74 @@
                     <td>{{ $patient->name ?? '-' }}</td>
                     <td>{{ $patient->birth_date->format('Y-m-d') ?? '-' }}</td>
                     <td>{{ $patient->n_id ?? '-' }}</td>
-                    <td>{{ $patient->gender ?? '-' }}</td>
                     <td>{{ $patient->phone ?? '-' }}</td>
                     <td>{{ $patient->escort_phone ?? '-' }}</td>
-                    <td>{{ $patient->city ?? '-' }}</td>
+                    <td>{{ optional($patient->city)->name ?? '-' }}</td>
                     <td>{{ $patient->category ?? '-' }}</td>
                     <td>{{ optional($patient->hospital)->name ?? '-' }}</td>
+                    <td>
+                        @if($patient->status == "العملية ناجحة")
+                        <span class="badge bg-lime text-lime-fg">{{$patient->status}}</span>
+                        @elseif ($patient->status == "العملية لم تنجح")
+                        <span class="badge bg-red text-red-fg">{{$patient->status}}</span>
+                        @else
+                        <span class="badge">{{$patient->status}}</span>
+                        @endif
+                    </td>
                     <td class="text-center" style="width: 134px;">
-                        <div
-                            role="group"
-                            aria-label="Row Actions"
-                            class="btn-group"
-                        >
+                        <span class="dropdown">
+                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown" aria-expanded="false">العمليات</button>
+                            <div class="dropdown-menu" style="">
+                                {{-- <span class="dropdown-header">Dropdown header</span> --}}
+                                {{-- @can('update', $patient)
+                                <a href="{{ route('patients.edit', $patient) }}" class="dropdown-item" >
+                                    تعديل
+                                </a>
+                                @endcan
+                                @can('view', $patient)
+                                <a href="{{ route('patients.show', $patient) }}" class="dropdown-item" >
+                                    عرض
+                                </a>
+                                @endcan
+                            
+                                @can('delete', $patient)
+                                <form action="{{ route('patients.destroy', $patient) }}" method="POST" class="inline pointer ms-1" onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')" >
+                                    @csrf @method('DELETE')
+                                    <button type="submit" class="dropdown-item" >
+                                        حذف
+                                    </button>
+                                </form>
+                                @endcan
+                                <div class="dropdown-divider"></div> --}}
+                                <form action="{{ route('patients.success', $patient) }}" method="POST" onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')" >
+                                    @csrf
+                                    <button type="submit" class="dropdown-item" >
+                                    تمت العملية بنجاح
+                                    </button>
+                                </form>
+                                <form action="{{ route('patients.failed', $patient) }}" method="POST" onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')" >
+                                    @csrf
+                                    <button type="submit" class="dropdown-item" >
+                                        لم تتم العملية بنجاح
+                                    </button>
+                                </form>
+                            </div>
+                        </span>
+                    </td>                    
+                    <td class="text-center" style="width: 134px;">
+                        <div role="group" aria-label="Row Actions" class="btn-group" >
                             @can('update', $patient)
-                            <a
-                                href="{{ route('patients.edit', $patient) }}"
-                                class="btn btn-icon btn-outline-warinig ms-1"
-                            >
+                            <a href="{{ route('patients.edit', $patient) }}" class="btn btn-icon btn-outline-warinig ms-1">
                                 <i class="ti ti-edit"></i>
                             </a>
                             @endcan @can('view', $patient)
-                            <a
-                                href="{{ route('patients.show', $patient) }}"
-                                class="btn btn-icon btn-outline-info ms-1"
-                            >
+                            <a href="{{ route('patients.show', $patient) }}" class="btn btn-icon btn-outline-info ms-1">
                                 <i class="ti ti-eye"></i>
                             </a>
                             @endcan @can('delete', $patient)
-                            <form
-                                action="{{ route('patients.destroy', $patient) }}"
-                                method="POST"
-                                class="inline pointer ms-1"
-                                onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')"
-                            >
+                            <form action="{{ route('patients.destroy', $patient) }}" method="POST" class="inline pointer ms-1" onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')">
                                 @csrf @method('DELETE')
-                                <button
-                                    type="submit"
+                                <button type="submit"
                                     class="btn btn-icon btn-outline-danger"
                                 >
                                     <i class="ti ti-trash-x"></i>

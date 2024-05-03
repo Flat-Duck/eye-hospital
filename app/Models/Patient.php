@@ -39,6 +39,11 @@ class Patient extends Model
         return $this->belongsTo(Hospital::class);
     }
 
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
     public function diagnoses()
     {
         return $this->hasMany(Diagnose::class);

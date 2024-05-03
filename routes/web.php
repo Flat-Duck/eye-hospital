@@ -38,6 +38,8 @@ Route::prefix('/')
 
         Route::resource('users', UserController::class);
         Route::resource('hospitals', HospitalController::class);
+        Route::post('patients/success/{patient}', [PatientController::class, 'success'])->name('patients.success');
+        Route::post('patients/failed/{patient}', [PatientController::class, 'failed'])->name('patients.failed');
         Route::resource('patients', PatientController::class);
         Route::resource('diagnoses', DiagnoseController::class);
         Route::resource('templates', TemplateController::class);

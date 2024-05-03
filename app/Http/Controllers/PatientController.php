@@ -103,17 +103,30 @@ class PatientController extends Controller
         /**
      * Update the specified resource in storage.
      */
-    public function operation(Patient $patient){
+    public function success(Patient $patient){
        // $this->authorize('update', $patient);
         
-       
+       $patient->status = "العملية ناجحة";
+       $patient->save();
         $templates = Template::all();
 
         foreach ($templates as $k => $template) {
-            dispatch(new AppointmentReminder($patient, $template))->delay(now());//->addDays($template->after));
+            dispatch(new AppointmentReminder($patient, $template))->delay(now()->addDays($template->after));
         }
         return redirect()
-            ->route('patients.edit', $patient)
+            ->back()
+            ->withSuccess(__('crud.common.saved'));
+    }
+    public function failed(Patient $patient){
+        $patient->status = "العملية لم تنجح";
+        $patient->save();
+        $templates = Template::all();
+
+        foreach ($templates as $k => $template) {
+            dispatch(new AppointmentReminder($patient, $template))->delay(now()->addDays($template->after));
+        }
+        return redirect()
+            ->back()
             ->withSuccess(__('crud.common.saved'));
     }
 
