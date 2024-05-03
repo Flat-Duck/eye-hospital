@@ -70,7 +70,13 @@
                     <td>{{ $user->phone ?? '-' }}</td>
                     <td>{{ $user->email ?? '-' }}</td>
                     <td>{{ optional($user->hospital)->name ?? '-' }}</td>
-                    <td>{{ $user->active ?? '-' }}</td>
+                    <td>
+                        @if ($user->active)
+                        <span class="badge bg-lime text-lime-fg">مفعل</span>
+                        @else
+                        <span class="badge bg-red text-red-fg">غير مفعل</span>                        
+                        @endif
+                    </td>
                     <td class="text-center" style="width: 134px;">
                         <div
                             role="group"
@@ -107,6 +113,26 @@
                                 </button>
                             </form>
                             @endcan
+                            <form
+                            action="{{ route('users.activation', $user) }}"
+                            method="POST"
+                            class="inline pointer ms-1"                                
+                            onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')"
+                        >
+                            @csrf 
+                            <button
+                                type="submit"
+                                class="btn btn-icon btn-outline-{{ $user->active? 'danger':'success' }}"
+                                Show password data-bs-toggle="tooltip"
+                                title="{{ $user->active? 'إلغاء تفعيل':'تفعيل' }}"
+                            >
+                            @if ($user->active)
+                            <i class="ti ti-lock"></i>                                
+                            @else
+                            <i class="ti ti-lock-open"></i>
+                            @endif
+                            </button>
+                        </form>
                         </div>
                     </td>
                 </tr>

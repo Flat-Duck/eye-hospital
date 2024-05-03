@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Hospital;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Role;
 
 class RegisterController extends Controller
 {
@@ -51,8 +53,27 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' => ['required', 'string', 'unique:users,phone'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'hospital_id' => ['required', 'exists:hospitals,id'],
         ]);
+    }
+
+        /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+        /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+        $hospitals = Hospital::pluck('name', 'id');
+        return view('auth.register', compact('hospitals'));
     }
 
     /**
@@ -63,10 +84,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
+            'active' => 0,
+            'hospital_id' => $data['hospital_id'],
             'password' => Hash::make($data['password']),
         ]);
+        $userRole = Role::where('name', 'user')->first();
+        $user->assignRole($userRole);
+        
+        return $user;
     }
 }

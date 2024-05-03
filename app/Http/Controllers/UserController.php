@@ -128,4 +128,15 @@ class UserController extends Controller
             ->route('users.index')
             ->withSuccess(__('crud.common.removed'));
     }
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function activation(Request $request, User $user): RedirectResponse
+    {
+        $user->toggleActivation();
+
+        return redirect()
+            ->route('users.index')
+            ->withSuccess(__('crud.common.saved'));
+    }
 }

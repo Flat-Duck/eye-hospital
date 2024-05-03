@@ -15,6 +15,12 @@ class PermissionsSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         // Create default permissions
+        Permission::create(['name' => 'list cities']);
+        Permission::create(['name' => 'view cities']);
+        Permission::create(['name' => 'create cities']);
+        Permission::create(['name' => 'update cities']);
+        Permission::create(['name' => 'delete cities']);
+
         Permission::create(['name' => 'list diagnoses']);
         Permission::create(['name' => 'view diagnoses']);
         Permission::create(['name' => 'create diagnoses']);
@@ -32,6 +38,12 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'create patients']);
         Permission::create(['name' => 'update patients']);
         Permission::create(['name' => 'delete patients']);
+
+        Permission::create(['name' => 'list templates']);
+        Permission::create(['name' => 'view templates']);
+        Permission::create(['name' => 'create templates']);
+        Permission::create(['name' => 'update templates']);
+        Permission::create(['name' => 'delete templates']);
 
         // Create user role and assign existing permissions
         $currentPermissions = Permission::all();

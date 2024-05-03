@@ -19,10 +19,28 @@
                         </span>
                     @enderror
                 </div>
+                <x-inputs.group class="col-sm-12">
+                    <x-inputs.select name="hospital_id" label="المستشفى" required>                        
+                        <option disabled selected >Please select the Hospital</option>
+                        @foreach($hospitals as $value => $label)
+                        <option value="{{ $value }}">{{ $label }}</option>
+                        @endforeach
+                    </x-inputs.select>
+                </x-inputs.group>
+            
                 <div class="mb-3">
                     <label class="form-label required">{{ __('البريد الالكتروني') }}</label>
                     <input type="email" placeholder="الرجاء ادخال البريد الإلكتروني" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     @error('email')
+                        <span class="invalid-feedback">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required">{{ __('رقم الهاتف') }}</label>
+                    <input type="text" placeholder="الرجاء ادخال رقم الهاتف" id="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                    @error('phone')
                         <span class="invalid-feedback">
                             <strong>{{ $message }}</strong>
                         </span>

@@ -37,6 +37,7 @@ Route::prefix('/')
         Route::resource('permissions', PermissionController::class);
 
         Route::resource('users', UserController::class);
+        Route::post('users/activation/{user}', [UserController::class,'activation'])->name('users.activation');
         Route::resource('hospitals', HospitalController::class);
         Route::post('patients/success/{patient}', [PatientController::class, 'success'])->name('patients.success');
         Route::post('patients/failed/{patient}', [PatientController::class, 'failed'])->name('patients.failed');
