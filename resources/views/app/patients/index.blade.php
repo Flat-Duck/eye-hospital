@@ -87,7 +87,7 @@
                 @forelse($patients as $patient)
                 <tr>
                     <td>{{ $patient->name ?? '-' }}</td>
-                    <td>{{ $patient->birth_date ?? '-' }}</td>
+                    <td>{{ $patient->birth_date->format('Y-m-d') ?? '-' }}</td>
                     <td>{{ $patient->n_id ?? '-' }}</td>
                     <td>{{ $patient->gender ?? '-' }}</td>
                     <td>{{ $patient->phone ?? '-' }}</td>

@@ -31,7 +31,7 @@
                             <input
                                 type="text"
                                 class="form-control"
-                                value="{{ $patient->birth_date ?? '-' }}"
+                                value="{{ $patient->birth_date$patient->format('Y-m-d') ?? '-' }}"
                                 disabled=""
                             />
                         </div>
