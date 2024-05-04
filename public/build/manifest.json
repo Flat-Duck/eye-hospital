@@ -1,28 +1,28 @@
 {
   "node_modules/@tabler/icons-webfont/dist/fonts/tabler-icons.ttf": {
-    "file": "assets/tabler-icons-CpUrPWmN.ttf",
+    "file": "assets/tabler-icons-CweI_gao.ttf",
     "src": "node_modules/@tabler/icons-webfont/dist/fonts/tabler-icons.ttf"
   },
   "node_modules/@tabler/icons-webfont/dist/fonts/tabler-icons.woff": {
-    "file": "assets/tabler-icons-Bjy5x-HT.woff",
+    "file": "assets/tabler-icons-CpvelmIk.woff",
     "src": "node_modules/@tabler/icons-webfont/dist/fonts/tabler-icons.woff"
   },
   "node_modules/@tabler/icons-webfont/dist/fonts/tabler-icons.woff2": {
-    "file": "assets/tabler-icons-DxKvLKHK.woff2",
+    "file": "assets/tabler-icons-B8orLCnS.woff2",
     "src": "node_modules/@tabler/icons-webfont/dist/fonts/tabler-icons.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BXyafFrx.js",
+    "file": "assets/app-CWkg03vK.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-BJIkpKwV.css"
+      "assets/app-D-Nki80F.css"
     ],
     "assets": [
-      "assets/tabler-icons-DxKvLKHK.woff2",
-      "assets/tabler-icons-Bjy5x-HT.woff",
-      "assets/tabler-icons-CpUrPWmN.ttf"
+      "assets/tabler-icons-B8orLCnS.woff2",
+      "assets/tabler-icons-CpvelmIk.woff",
+      "assets/tabler-icons-CweI_gao.ttf"
     ]
   },
   "resources/sass/app.scss": {
