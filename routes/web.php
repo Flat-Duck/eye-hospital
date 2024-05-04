@@ -31,7 +31,7 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('/')
-    ->middleware('auth')
+    ->middleware(['auth', 'check.active'])
     ->group(function () {
         Route::resource('roles', RoleController::class);
         Route::resource('permissions', PermissionController::class);
