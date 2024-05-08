@@ -22,14 +22,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{ $modalTitle }}</h5>
-                <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                >
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                {{-- <button type="button" class="btn close badge bg-red text-red-fg badge-pill" wire:click="$toggle('showingModal')" data-dismiss="modal" aria-label="Close" data-bs-dismiss="modal" style="
+                max-width: 25px;
+                max-height: 25px;
+                margin-top: 0px;
+                margin-left: -40px;
+                ">
+                <i class="ti ti-x"></i> </button> --}}
             </div>
 
             <div class="modal-body">
@@ -48,6 +47,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
+                            required
                             name="diagnose.BCVA"
                             label="BCVA"
                             wire:model="diagnose.BCVA"
@@ -58,6 +58,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
+                            required
                             name="diagnose.IOP"
                             label="I.O.P"
                             wire:model="diagnose.IOP"
@@ -68,6 +69,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
+                            required
                             name="diagnose.LID"
                             label="LID"
                             wire:model="diagnose.LID"
@@ -78,6 +80,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
+                            required
                             name="diagnose.conjunctiva"
                             label="CONJUNCTIVA"
                             wire:model="diagnose.conjunctiva"
@@ -88,6 +91,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
+                            required
                             name="diagnose.cornea"
                             label="CORNEA"
                             wire:model="diagnose.cornea"
@@ -98,6 +102,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
+                            required
                             name="diagnose.AC"
                             label="A/C"
                             wire:model="diagnose.AC"
@@ -108,6 +113,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
+                            required
                             name="diagnose.IrisPupil"
                             label="IRIS & PUPIL"
                             wire:model="diagnose.IrisPupil"
@@ -118,6 +124,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
+                            required
                             name="diagnose.lens"
                             label="LENS"
                             wire:model="diagnose.lens"
@@ -128,6 +135,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.text
+                            required
                             name="diagnose.fundus"
                             label="FUNDUS"
                             wire:model="diagnose.fundus"
@@ -138,6 +146,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.textarea
+                            required
                             name="diagnose.remarks"
                             label="REMARKS"
                             wire:model="diagnose.remarks"
@@ -147,6 +156,7 @@
 
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.textarea
+                            required
                             name="diagnose.diagnosis"
                             label="DIAGNOSIS"
                             wire:model="diagnose.diagnosis"
@@ -154,7 +164,7 @@
                         ></x-inputs.textarea>
                     </x-inputs.group>
 
-                    <x-inputs.group class="col-sm-12 col-lg-4">
+                    <x-inputs.group class="col-sm-12">
                         <x-inputs.partials.label
                             name="diagnoseOct"
                             label="OCT"
@@ -166,7 +176,7 @@
                             name="diagnoseOct"
                             id="diagnoseOct{{ $uploadIteration }}"
                             wire:model="diagnoseOct"
-                            class="form-control-file"
+                            class="form-control"
                         />
 
                         @if($editing && $diagnose->OCT)
@@ -182,7 +192,7 @@
                         @include('components.inputs.partials.error') @enderror
                     </x-inputs.group>
 
-                    <x-inputs.group class="col-sm-12 col-lg-4">
+                    <x-inputs.group class="col-sm-12">
                         <x-inputs.partials.label
                             name="diagnoseUs"
                             label="U/S"
@@ -194,7 +204,7 @@
                             name="diagnoseUs"
                             id="diagnoseUs{{ $uploadIteration }}"
                             wire:model="diagnoseUs"
-                            class="form-control-file"
+                            class="form-control"
                         />
 
                         @if($editing && $diagnose->US)
@@ -210,7 +220,7 @@
                         @include('components.inputs.partials.error') @enderror
                     </x-inputs.group>
 
-                    <x-inputs.group class="col-sm-12 col-lg-4">
+                    <x-inputs.group class="col-sm-12">
                         <x-inputs.partials.label
                             name="diagnosePantacam"
                             label="PANTACAM"
@@ -222,7 +232,7 @@
                             name="diagnosePantacam"
                             id="diagnosePantacam{{ $uploadIteration }}"
                             wire:model="diagnosePantacam"
-                            class="form-control-file"
+                            class="form-control"
                         />
 
                         @if($editing && $diagnose->pantacam)
@@ -240,20 +250,20 @@
                 </div>
             </div>
 
-            @if($editing) @endif
+            {{-- @if($editing) @endif --}}
 
             <div class="modal-footer">
                 <button
                     type="button"
-                    class="btn btn-light float-left"
+                    class="btn me-auto"
                     wire:click="$toggle('showingModal')"
                 >
-                    <i class="icon ion-md-close"></i>
+                    <i class="ti ti-close"></i>
                     @lang('crud.common.cancel')
                 </button>
 
                 <button type="button" class="btn btn-primary" wire:click="save">
-                    <i class="icon ion-md-save"></i>
+                    <i class="ti ti-save"></i>
                     @lang('crud.common.save')
                 </button>
             </div>

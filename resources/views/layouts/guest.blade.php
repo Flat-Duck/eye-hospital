@@ -14,7 +14,6 @@
     @yield('styles')
 
     @livewireStyles
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.3.0/tabler-icons.min.css">
   </head>
   <body>
   <body dir="rtl" class=" d-flex flex-column">
