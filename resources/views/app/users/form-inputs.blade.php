@@ -18,7 +18,7 @@
             label="رقم الهاتف"
             :value="old('phone', ($editing ? $user->phone : ''))"
             maxlength="255"
-            placeholder="رقم الهاتف"
+            placeholder="09XXXXXXXX"
             required
         ></x-inputs.text>
     </x-inputs.group>

@@ -22,7 +22,7 @@ class UserStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'phone' => ['required', 'max:255', 'string'],
+            'phone' => ['required', 'digits:10','numeric','starts_with:09',],
             'email' => ['required', 'unique:users,email', 'email'],
             'password' => ['required'],
             'hospital_id' => ['required', 'exists:hospitals,id'],

@@ -45,7 +45,7 @@
             name="phone"
             label="رقم الهاتف"
             :value="old('phone', ($editing ? $patient->phone : ''))"
-            placeholder="رقم الهاتف"
+            placeholder="09XXXXXXXX"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -55,7 +55,7 @@
             name="escort_phone"
             label="رقم هاتف المرافق"
             :value="old('escort_phone', ($editing ? $patient->escort_phone : ''))"
-            placeholder="رقم هاتف المرافق"
+            placeholder="09XXXXXXXX"
             required
         ></x-inputs.text>
     </x-inputs.group>

@@ -22,10 +22,10 @@ class PatientStoreRequest extends FormRequest
         return [
             'name' => ['required', 'max:255', 'string'],
             'birth_date' => ['required', 'date'],
-            'n_id' => ['required', 'max:255'],
+            'n_id' => ['required', 'digits:12','numeric'],
             'gender' => ['required', 'in:male,female'],
-            'phone' => ['required', 'max:255', 'string'],
-            'escort_phone' => ['required', 'max:255', 'string'],
+            'phone' => ['required', 'digits:10','numeric','starts_with:09',],
+            'escort_phone' => ['required', 'digits:10','numeric','starts_with:09',],
             'city_id' => ['required', 'exists:cities,id'],
             'category' => ['required', 'max:255', 'string'],
             'hospital_id' => ['required', 'exists:hospitals,id'],
