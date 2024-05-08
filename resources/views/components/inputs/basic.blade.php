@@ -13,13 +13,10 @@
 @endif
 
 <input type="{{ $type }}" id="{{ $name }}" name="{{ $name }}" value="{{ old($name, $value ?? '') }}" {{ ($required ?? false) ? 'required' : '' }}
-    {{ $attributes->merge(['class' => 'form-control']) }}
     {{ $min ? "min={$min}" : '' }}
     {{ $max ? "max={$max}" : '' }}
     {{ $step ? "step={$step}" : '' }}
-    @error($name)
-        {{ $attributes->merge(['class' => 'is-invalid']) }}
-    @enderror
+    {{ $attributes->class(['form-control', 'is-invalid'=> $errors->has($name)]) }}
     autocomplete="off" >
 
 @error($name)

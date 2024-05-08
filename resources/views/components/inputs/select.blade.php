@@ -12,9 +12,10 @@
     id="{{ $name }}"
     name="{{ $name }}"
     {{ ($required ?? false) ? 'required' : '' }}
-    {{ $attributes->merge(['class' => 'form-control']) }}
-    autocomplete="off"
->{{ $slot }}</select>
+    {{ $attributes->class(['form-control', 'is-invalid'=> $errors->has($name)]) }}
+    autocomplete="off">
+    {{ $slot }}
+</select>
 
 @error($name)
     @include('components.inputs.partials.error')

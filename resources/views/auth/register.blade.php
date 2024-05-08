@@ -21,7 +21,7 @@
                 </div>
                 <x-inputs.group class="col-sm-12">
                     <x-inputs.select name="hospital_id" label="المستشفى" required>                        
-                        <option disabled selected >Please select the Hospital</option>
+                        <option disabled selected >الرجاء اختيار المستشفى</option>
                         @foreach($hospitals as $value => $label)
                         <option value="{{ $value }}">{{ $label }}</option>
                         @endforeach

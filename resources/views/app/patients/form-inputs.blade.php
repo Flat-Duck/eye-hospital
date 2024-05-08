@@ -33,7 +33,7 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="gender" label="الجنس">
+        <x-inputs.select name="gender" label="الجنس" required>
             @php $selected = old('gender', ($editing ? $patient->gender : '')) @endphp
             <option value="male" {{ $selected == 'male' ? 'selected' : '' }} >Male</option>
             <option value="female" {{ $selected == 'female' ? 'selected' : '' }} >Female</option>
@@ -95,7 +95,7 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.select name="hospital_id" label="المستشفى" required>
             @php $selected = old('hospital_id', ($editing ? $patient->hospital_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Hospital</option>
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>الرجاء اختيار المستشفى</option>
             @foreach($hospitals as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach

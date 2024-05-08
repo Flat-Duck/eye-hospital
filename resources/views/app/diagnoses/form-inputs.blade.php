@@ -4,7 +4,7 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.select name="patient_id" label="Patient" required>
             @php $selected = old('patient_id', ($editing ? $diagnose->patient_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Patient</option>
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>الرجاء اختيار الحالة</option>
             @foreach($patients as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
@@ -12,7 +12,7 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="eye" label="Eye">
+        <x-inputs.select name="eye" label="Eye" required>
             @php $selected = old('eye', ($editing ? $diagnose->eye : 'Left')) @endphp
             <option value="Left" {{ $selected == 'Left' ? 'selected' : '' }} >Left</option>
             <option value="Right" {{ $selected == 'Right' ? 'selected' : '' }} >Right</option>

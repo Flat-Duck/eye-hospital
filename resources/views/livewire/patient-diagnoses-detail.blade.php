@@ -36,6 +36,7 @@
                 <div>
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.select
+                        required
                             name="diagnose.eye"
                             label="Eye"
                             wire:model="diagnose.eye"

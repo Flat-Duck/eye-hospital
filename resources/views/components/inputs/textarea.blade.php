@@ -9,10 +9,10 @@
 
 <textarea 
     id="{{ $name }}"
-    name="{{ $name }}" 
+    name="{{ $name }}"
     rows="3"
     {{ ($required ?? false) ? 'required' : '' }}
-    {{ $attributes->merge(['class' => 'form-control']) }}
+    {{ $attributes->class(['form-control', 'is-invalid'=> $errors->has($name)]) }}
     autocomplete="off"
 >{{$slot}}</textarea>
 
