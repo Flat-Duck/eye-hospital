@@ -12,21 +12,21 @@
             {{-- <div class="nav-item d-none d-md-flex me-3">
                 <div class="btn-list">
                 <a href="https://github.com/sponsors/codecalm" class="btn" target="_blank" rel="noreferrer">
-                    
+                    <i class="ti ti-heart text-pink"></i>
                     Sponsor
                 </a>
             </div>
         </div> --}}
         <div class="d-none d-md-flex">
             <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
-                {{-- <i class="ti ti-moon"></i> --}}
+                <i class="ti ti-moon"></i>
             </a>
             <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
-                {{-- <i class="ti ti-sun"></i> --}}
+                <i class="ti ti-sun"></i>
             </a>
             {{-- <div class="nav-item dropdown d-none d-md-flex me-3">
                 <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="Show notifications">
-                    
+                    <i class="ti ti-bell"></i>
                     <span class="badge bg-red"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="col-auto">
                                             <a href="#" class="list-group-item-actions">
-                                                
+                                                <i class="ti ti-star"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@
                     @auth
                         <a class="dropdown-item" href="{{ route('profile.show') }}" rel="noopener">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                {{-- <i class="ti ti-user-circle"></i> --}}
+                                <i class="ti ti-user-circle"></i>
                             </span>
                             <span class="nav-link-title">
                                 {{ __('Profile') }}
@@ -82,7 +82,7 @@
                         </a>
                         <a class="dropdown-item" href="{{ route('logout') }}" rel="noopener" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                {{-- <i class="ti ti-logout-2"></i> --}}
+                                <i class="ti ti-logout-2"></i>
                             </span>
                             <span class="nav-link-title">
                                 {{ __('Logout') }}

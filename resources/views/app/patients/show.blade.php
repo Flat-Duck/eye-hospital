@@ -3,7 +3,8 @@
 <div class="card">
     <div class="card-header">
         <a href="{{ route('patients.index') }}" class="mr-4"
-            >رجوع</a>
+            ><i class="ti ti-arrow-back"></i
+        ></a>
         <h3 class="card-title">@lang('crud.patients.show_title')</h3>
     </div>
 

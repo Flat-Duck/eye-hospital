@@ -5,7 +5,8 @@
     @csrf
     <div class="card-header">
         <a href="{{ route('templates.index') }}" class="mr-4"
-            >رجوع</a>
+            ><i class="ti ti-arrow-back"></i
+        ></a>
         <h3 class="card-title">@lang('crud.templates.create_title')</h3>
     </div>
     <div class="card-body">
@@ -19,7 +20,7 @@
                 >@lang('crud.common.back')</a
             >
             <button type="submit" class="btn btn-primary">
-                @lang('crud.common.create')
+                <i class="ti ti-device-floppy"></i> @lang('crud.common.create')
             </button>
         </div>
     </div>

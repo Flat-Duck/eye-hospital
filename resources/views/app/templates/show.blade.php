@@ -3,7 +3,8 @@
 <div class="card">
     <div class="card-header">
         <a href="{{ route('templates.index') }}" class="mr-4"
-            >رجوع</a>
+            ><i class="ti ti-arrow-back"></i
+        ></a>
         <h3 class="card-title">@lang('crud.templates.show_title')</h3>
     </div>
 

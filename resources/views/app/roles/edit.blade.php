@@ -5,7 +5,8 @@
     @csrf @method('PUT')
     <div class="card-header">
         <a href="{{ route('roles.index') }}" class="mr-4"
-            >رجوع</a>
+            ><i class="ti ti-arrow-back"></i
+        ></a>
         <h3 class="card-title">@lang('crud.roles.edit_title')</h3>
     </div>
     <div class="card-body">
@@ -32,7 +33,7 @@
             </a>
             @endcan
             <button type="submit" class="btn btn-primary">
-                </i> @lang('crud.common.update')
+                <i class="ti ti-device-floppy"></i> @lang('crud.common.update')
             </button>
         </div>
     </div>
