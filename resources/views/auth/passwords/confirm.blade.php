@@ -29,7 +29,7 @@
                         <input type="password" placeholder="Enter password" id="password"  class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="current-password" autofocus>
                         <span class="input-group-text">
                             <a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip">
-                                <i class="ti ti-eye"></i>
+                                عرض
                             </a>
                         </span>
                     </div>

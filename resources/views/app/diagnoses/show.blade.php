@@ -3,8 +3,7 @@
 <div class="card">
     <div class="card-header">
         <a href="{{ route('diagnoses.index') }}" class="mr-4"
-            ><i class="ti ti-arrow-back"></i
-        ></a>
+            >رجوع</a>
         <h3 class="card-title">@lang('crud.diagnoses.show_title')</h3>
     </div>
 
@@ -164,7 +163,6 @@
                             <a
                                 href="{{ \Storage::url($diagnose->OCT) }}"
                                 target="blank"
-                                ><i class="ti ti-cloud-download"></i
                                 >&nbsp;Download</a
                             >
                             @else - @endif
@@ -177,7 +175,6 @@
                             <a
                                 href="{{ \Storage::url($diagnose->US) }}"
                                 target="blank"
-                                ><i class="ti ti-cloud-download"></i
                                 >&nbsp;Download</a
                             >
                             @else - @endif
@@ -190,7 +187,6 @@
                             <a
                                 href="{{ \Storage::url($diagnose->pantacam) }}"
                                 target="blank"
-                                ><i class="ti ti-cloud-download"></i
                                 >&nbsp;Download</a
                             >
                             @else - @endif

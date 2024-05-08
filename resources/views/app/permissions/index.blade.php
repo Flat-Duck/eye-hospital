@@ -7,7 +7,7 @@
                 <div class="row g-2">
                     <div class="input-icon col">
                         <span class="input-icon-addon">
-                            <i class="ti ti-search"></i>
+                            بحث
                         </span>
                         <input
                             id="indexSearch"
@@ -27,7 +27,7 @@
                             class="btn btn-icon btn-primary"
                             aria-label="Button"
                         >
-                            <i class="ti ti-search"></i>
+                            بحث
                         </button>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     class="pull-right btn btn-primary"
                     href="{{ route('permissions.create') }}"
                 >
-                    <i class="ti ti-plus"></i>
+                    
                     @lang('crud.common.create')
                 </a>
                 @endcan
@@ -74,14 +74,14 @@
                                 href="{{ route('permissions.edit', $permission) }}"
                                 class="btn btn-icon btn-outline-warinig ms-1"
                             >
-                                <i class="ti ti-edit"></i>
+                                تعديل
                             </a>
                             @endcan @can('view', $permission)
                             <a
                                 href="{{ route('permissions.show', $permission) }}"
                                 class="btn btn-icon btn-outline-info ms-1"
                             >
-                                <i class="ti ti-eye"></i>
+                                عرض
                             </a>
                             @endcan @can('delete', $permission)
                             <form
@@ -95,7 +95,7 @@
                                     type="submit"
                                     class="btn btn-icon btn-outline-danger"
                                 >
-                                    <i class="ti ti-trash-x"></i>
+                                    حذف
                                 </button>
                             </form>
                             @endcan

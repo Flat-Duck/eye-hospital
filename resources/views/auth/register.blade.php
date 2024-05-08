@@ -52,7 +52,7 @@
                         <input type="password" placeholder="إدخل كلمة المرور" id="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="password" autofocus>
                         <span class="input-group-text">
                             <a href="#" class="link-secondary" title="عرض كلمة المرور" data-bs-toggle="tooltip">
-                                <i class="ti ti-eye"></i>
+                                عرض
                             </a>
                         </span>
                     </div>
@@ -69,7 +69,7 @@
                         <input type="password" placeholder="تأكيد كلمة المرور" id="password-confirm" class="form-control" name="password_confirmation" value="{{ old('password-confirm') }}" required autocomplete="new-password" autofocus>
                         <span class="input-group-text">
                             <a href="#" class="link-secondary" title="عرض كلمة المرور" data-bs-toggle="tooltip">
-                                <i class="ti ti-eye"></i>
+                                عرض
                             </a>
                         </span>
                     </div>

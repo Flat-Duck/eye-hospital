@@ -10,8 +10,7 @@
     @csrf @method('PUT')
     <div class="card-header">
         <a href="{{ route('diagnoses.index') }}" class="mr-4"
-            ><i class="ti ti-arrow-back"></i
-        ></a>
+            >رجوع</a>
         <h3 class="card-title">@lang('crud.diagnoses.edit_title')</h3>
     </div>
     <div class="card-body">
@@ -38,7 +37,7 @@
             </a>
             @endcan
             <button type="submit" class="btn btn-primary">
-                <i class="ti ti-device-floppy"></i> @lang('crud.common.update')
+                </i> @lang('crud.common.update')
             </button>
         </div>
     </div>

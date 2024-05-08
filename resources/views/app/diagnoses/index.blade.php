@@ -7,7 +7,7 @@
                 <div class="row g-2">
                     <div class="input-icon col">
                         <span class="input-icon-addon">
-                            <i class="ti ti-search"></i>
+                            بحث
                         </span>
                         <input
                             id="indexSearch"
@@ -27,7 +27,7 @@
                             class="btn btn-icon btn-primary"
                             aria-label="Button"
                         >
-                            <i class="ti ti-search"></i>
+                            بحث
                         </button>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     class="pull-right btn btn-primary"
                     href="{{ route('diagnoses.create') }}"
                 >
-                    <i class="ti ti-plus"></i>
+                    
                     @lang('crud.common.create')
                 </a>
                 @endcan
@@ -121,7 +121,6 @@
                         <a
                             href="{{ \Storage::url($diagnose->OCT) }}"
                             target="blank"
-                            ><i class="ti ti-cloud-download"></i
                             >&nbsp;Download</a
                         >
                         @else - @endif
@@ -131,7 +130,6 @@
                         <a
                             href="{{ \Storage::url($diagnose->US) }}"
                             target="blank"
-                            ><i class="ti ti-cloud-download"></i
                             >&nbsp;Download</a
                         >
                         @else - @endif
@@ -141,7 +139,6 @@
                         <a
                             href="{{ \Storage::url($diagnose->pantacam) }}"
                             target="blank"
-                            ><i class="ti ti-cloud-download"></i
                             >&nbsp;Download</a
                         >
                         @else - @endif
@@ -157,14 +154,14 @@
                                 href="{{ route('diagnoses.edit', $diagnose) }}"
                                 class="btn btn-icon btn-outline-warinig ms-1"
                             >
-                                <i class="ti ti-edit"></i>
+                                تعديل
                             </a>
                             @endcan @can('view', $diagnose)
                             <a
                                 href="{{ route('diagnoses.show', $diagnose) }}"
                                 class="btn btn-icon btn-outline-info ms-1"
                             >
-                                <i class="ti ti-eye"></i>
+                                عرض
                             </a>
                             @endcan @can('delete', $diagnose)
                             <form
@@ -178,7 +175,7 @@
                                     type="submit"
                                     class="btn btn-icon btn-outline-danger"
                                 >
-                                    <i class="ti ti-trash-x"></i>
+                                    حذف
                                 </button>
                             </form>
                             @endcan

@@ -7,7 +7,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}" >
                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                    <i class="ti ti-home"></i>
+                                    {{-- <i class="ti ti-home"></i> --}}
                                 </span>
                                 <span class="nav-link-title">
                                     الرئيسية
@@ -19,7 +19,7 @@
                                     <a class="nav-link" href="{{ route('users.index') }}" >
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Users -->
-                                            <i class="ti ti-users"></i>
+                                            {{-- <i class="ti ti-users"></i> --}}
                                         </span>
                                         <span class="nav-link-title">
                                             المستخدمين
@@ -32,7 +32,7 @@
                                     <a class="nav-link" href="{{ route('hospitals.index') }}" >
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Hospitals -->
-                                            <i class="ti ti-building-hospital"></i>
+                                            {{-- <i class="ti ti-building-hospital"></i> --}}
                                         </span>
                                         <span class="nav-link-title">
                                             المستشفيات
@@ -45,7 +45,7 @@
                                     <a class="nav-link" href="{{ route('patients.index') }}" >
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Patients -->
-                                            <i class="ti ti-emergency-bed"></i>
+                                            {{-- <i class="ti ti-emergency-bed"></i> --}}
                                         </span>
                                         <span class="nav-link-title">
                                             الحالات
@@ -58,7 +58,7 @@
                                     <a class="nav-link" href="{{ route('diagnoses.index') }}" >
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Diagnoses -->
-                                            <i class="ti ti-eye-cog"></i>
+                                            {{-- <i class="ti ti-eye-cog"></i>
                                         </span>
                                         <span class="nav-link-title">
                                             التشخيصات
@@ -72,7 +72,7 @@
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Templates -->
                                             <!-- Templates Icon -->
-                                            <i class="ti ti-building-bridge-2"></i>
+                                            {{-- <i class="ti ti-building-bridge-2"></i> --}}
                                         </span>
                                         <span class="nav-link-title">
                                             المدن
@@ -86,7 +86,7 @@
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Templates -->
                                             <!-- Templates Icon -->
-                                            <i class="ti ti-template"></i>
+                                            {{-- <i class="ti ti-template"></i> --}}
                                         </span>
                                         <span class="nav-link-title">
                                             القوالب
@@ -99,7 +99,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#navbar-access" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <i class="ti ti-lock-access"></i>
+                                            {{-- <i class="ti ti-lock-access"></i> --}}
                                         </span>
                                         <span class="nav-link-title">
                                             الصلاحيات
@@ -109,7 +109,7 @@
                                         @can('view-any', Spatie\Permission\Models\Role::class)
                                             <a class="dropdown-item" href="{{ route('roles.index') }}" rel="noopener">
                                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                                    <i class="ti ti-user-check"></i>
+                                                    {{-- <i class="ti ti-user-check"></i> --}}
                                                 </span>
                                                 <span class="nav-link-title">
                                                     Roles
@@ -119,7 +119,7 @@
                                         @can('view-any', Spatie\Permission\Models\Permission::class)
                                             <a class="dropdown-item" href="{{ route('permissions.index') }}">
                                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                                    <i class="ti ti-key"></i>
+                                                    {{-- <i class="ti ti-key"></i> --}}
                                                 </span>
                                                 <span class="nav-link-title">
                                                     Permissions
