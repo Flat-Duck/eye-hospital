@@ -129,6 +129,17 @@
             <a href="{{ route('patients.create') }}" class="btn btn-primary">
                 @lang('crud.common.create')
             </a>
+
+            <a
+                data-bs-original-title="تصدير"
+                data-bs-placement="top"
+                data-bs-toggle="tooltip"
+                class="pull-right btn btn-info"
+                href="{{ route('patients.profile.export', $patient) }}"
+                >
+                <i class="ti ti-table"></i>
+                تصدير
+            </a>
             @endcan
         </div>
     </div>

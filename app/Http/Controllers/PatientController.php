@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PatientFullExport;
+use App\Exports\PatientsExport;
 use App\Jobs\AppointmentReminder;
 use App\Models\City;
 use App\Models\Patient;
@@ -12,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\PatientStoreRequest;
 use App\Http\Requests\PatientUpdateRequest;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PatientController extends Controller
 {
@@ -128,6 +131,14 @@ class PatientController extends Controller
         return redirect()
             ->back()
             ->withSuccess(__('crud.common.saved'));
+    }
+    public function export()
+    {
+        return Excel::download(new PatientsExport, 'patients.xlsx');
+    }
+    public function profile_export(Patient $patient)
+    {
+        return Excel::download(new PatientFullExport($patient), 'patient_'.$patient->name.'.xlsx');
     }
 
     /**

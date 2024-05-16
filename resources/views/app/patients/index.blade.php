@@ -32,6 +32,7 @@
                     </div>
                 </div>
             </form>
+
             <div class="col-auto ms-auto d-print-none">
                 @can('create', App\Models\Patient::class)
                 <a
@@ -43,6 +44,16 @@
                 >
                     <i class="ti ti-plus"></i>
                     @lang('crud.common.create')
+                </a>
+                <a
+                    data-bs-original-title="تصدير"
+                    data-bs-placement="top"
+                    data-bs-toggle="tooltip"
+                    class="pull-right btn btn-info"
+                    href="{{ route('patients.export') }}"
+                >
+                    <i class="ti ti-table"></i>
+                    تصدير
                 </a>
                 @endcan
             </div>

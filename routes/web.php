@@ -42,6 +42,8 @@ Route::prefix('/')
         Route::post('patients/success/{patient}', [PatientController::class, 'success'])->name('patients.success');
         Route::post('patients/failed/{patient}', [PatientController::class, 'failed'])->name('patients.failed');
         Route::resource('patients', PatientController::class);
+        Route::get('export/patients', [PatientController::class, 'export'])->name('patients.export');
+        Route::get('export/patients/{patient}', [PatientController::class, 'profile_export'])->name('patients.profile.export');
         Route::resource('diagnoses', DiagnoseController::class);
         Route::resource('templates', TemplateController::class);
         Route::resource('cities', CityController::class);
